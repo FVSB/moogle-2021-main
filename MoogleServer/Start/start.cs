@@ -16,7 +16,7 @@ public static class Start
         System.Console.WriteLine(crono.ElapsedMilliseconds / 1000 + " Finish Tf_Idf");
         System.Console.WriteLine("All OK :😀");
          MoogleEngine.Re_Start.Start();
-         MoogleEngine.Search_Class.Search("((~?)robot hola)");
+         
         
     }
 
