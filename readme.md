@@ -16,16 +16,17 @@
  En caso de no encontrarse la palabra o su raíz (casos de mas de 7 caracteres) se procede a buscar la de mayor coincidencia en el corpus (en el apartado de sugerencia se le informara que esta fue utilizada) y se le rebajara el score de esta en relación  
  con lo la simulitud de la palabra de la consulta 
  
- *Próximamente se añadirá la opción  para sinónimos y no aparecer en ese texto *  
+ *Próximamente se añadirá la opción  para sinónimos *  
  
- Para establecer el score por el cual se rige el orden de aparición de los resultados 
- se utiliza el Tf_Idf herramienta esencial, por ejemplo el Tf es el porcentaje de relevancia de la palabra en términos de apariciones y el Idf controla el nivel de rareza de esta en el corpus como ¿como? Pues muy fácil dado la cantidad de documentos y en la la de  apariciones que esta tiene, en cada uno se establece una proporcion para ello utilizamos el poder de la función logaritmo ya que mientas menor sea el cociente de la proporcion anterior mayor sera la "rareza" de la palabra en el corpus. Despues estos dos numeros se multiplican ya que su producto es el balance casi ideal. 
+ Para establecer el score por el cual se rige el orden de aparición de los resultados se utiliza el Tf_Idf herramienta esencial, por ejemplo el Tf es el porcentaje de relevancia de la palabra en términos de apariciones y el Idf controla el nivel de rareza de esta en el corpus como ¿Cómo? Pués muy fácil dado la cantidad de documentos y en la cantidad de apariciones que esta tiene, en cada uno se establece una proporcion para ello utilizamos el poder de la función logaritmo ya que mientas menor sea el cociente de la proporcion anterior mayor será la "rareza" de la palabra en el corpus. Despues estos dos numeros se multiplican ya que su producto es el balance casi ideal. 
  
- Despues de tener estos datos ¿Como establecemos la coincidencia? 
+ Despues de tener estos datos ¿Cómo establecemos la coincidencia? 
  
- Pues de las clases de algebra lineal se conoce el contenido de espacios lineales  y las aplicaciones lineales tomando las palabras como nuestro espacio vectorial 
- y la consulta como el vector consulta establecemos una aplicacion lineal que nos da la coincidencia del score de la consulta con el de su imagen en los textos. Acá entra la función coseno ¿por qué? Muy fácil ya que necesitamos una funcion que mientras mas cercano estén dos vectores (la cercanía será componente a componente) mayor sea su valor. 
- Ademas para ello se normaliza el vector que no es más que su longitud en base a su score y el de su reflejo.  
+ Pues de las clases de Álgebra Lineal se conoce el contenido de espacios lineales y aplicaciones lineales tomando las palabras como nuestro espacio vectorial. Pues para ello
+ en la consulta establecemos una aplicacion lineal que nos da la coincidencia del score de la consulta con el de su imagen en los textos. Acá entra la función coseno ¿por qué? Muy fácil ya que necesitamos una funcion que mientras mas cercano estén dos vectores (la cercanía será componente a componente) mayor sea su valor. 
+ 
+ Además para ello se normaliza el vector que no es más que su longitud en base a su score y el de su reflejo. 
+ 
  Y por último se realiza la organización de mayor a menor (por su score) y se procede a la entrega de los resultados. 
  
  ¿Qué pasa si quiero utilizar un operador? 
